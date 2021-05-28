@@ -1,0 +1,20 @@
+github:
+  prebuilds:
+    master: true
+    branches: false
+    pullRequests: false
+    addCheck: true
+    addComment: false
+    addBadge: true
+    addLabel: true
+
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - before: '[ ! -e "./.env" ] && cp .env.template .env'
+    name: Init .env file
+
+  - init: >
+      cd docker-compose up -d
+    name: Init Sync Core modules

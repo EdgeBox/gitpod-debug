@@ -1,0 +1,116 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "typescript",
+			"tsconfig": "services/api/tsconfig.json",
+			"option": "watch",
+			"problemMatcher": [
+				"$tsc-watch"
+			],
+			"group": "build",
+			"label": "tsc: watch - services/api/tsconfig.json",
+			"isBackground": true,
+		},
+		{
+			"label": "API: tsc watch",
+			"type": "shell",
+			"command": "tsc",
+			"isBackground": true,
+			"args": ["--build", "--watch"],
+			"options": {
+				"cwd": "/workspace/stack/services/api"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "never",
+				"echo": false,
+				"focus": false,
+				"panel": "dedicated"
+			},
+			"problemMatcher": {
+				"fileLocation": "absolute",
+				"base": "$tsc-watch",
+				"applyTo": "allDocuments"
+			}
+		},
+		{
+			"label": "Sync Core: tsc watch",
+			"type": "shell",
+			"command": "tsc",
+			"isBackground": true,
+			"args": ["--build", "--watch"],
+			"options": {
+				"cwd": "/workspace/stack/services/sync-core-2"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "never",
+				"echo": false,
+				"focus": false,
+				"panel": "dedicated"
+			},
+			"problemMatcher": {
+				"fileLocation": "absolute",
+				"base": "$tsc-watch",
+				"applyTo": "allDocuments"
+			}
+		},
+		{
+			"label": "App: tsc watch",
+			"type": "shell",
+			"command": "tsc",
+			"isBackground": true,
+			"args": ["--build", "--watch"],
+			"options": {
+				"cwd": "/workspace/stack/services/app"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "never",
+				"echo": false,
+				"focus": false,
+				"panel": "dedicated"
+			},
+			"problemMatcher": {
+				"fileLocation": "absolute",
+				"base": "$tsc-watch",
+				"applyTo": "allDocuments"
+			}
+		},
+		{
+			"label": "Embed: tsc watch",
+			"type": "shell",
+			"command": "tsc",
+			"isBackground": true,
+			"args": ["--build", "--watch"],
+			"options": {
+				"cwd": "/workspace/stack/services/embed"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "never",
+				"echo": false,
+				"focus": false,
+				"panel": "dedicated"
+			},
+			"problemMatcher": {
+				"fileLocation": "absolute",
+				"base": "$tsc-watch",
+				"applyTo": "allDocuments"
+			}
+		}
+	]
+}

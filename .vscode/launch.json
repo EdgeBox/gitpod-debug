@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": "Listen for XDebug",
+          "type": "php",
+          "request": "launch",
+          "hostname": "0.0.0.0",
+          "port": 9003,
+          "pathMappings": {
+              "/opt/drupal": "${workspaceRoot}/drupal/d8",
+              "/opt/module": "${workspaceRoot}/drupal/module",
+              "/opt/library": "${workspaceRoot}/php-library"
+          }
+      }
+  ]
+}

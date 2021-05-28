@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "explorer.autoReveal": "focusNoScroll",
+    "mdb.connectionSaving.defaultConnectionSavingLocation": "Workspace"
+}
