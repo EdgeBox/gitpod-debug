@@ -1,19 +1,96 @@
+---
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
+ports:
+# App
+  - port: 3000
+    onOpen: ignore
+    visibility: public
+# Embed
+  - port: 3001
+    onOpen: ignore
+    visibility: public
+# API
+  - port: 3010
+    onOpen: ignore
+    visibility: public
+# Sync Core
+  - port: 3020
+    onOpen: ignore
+    visibility: public
+# Proxy
+  - port: 3040
+    onOpen: ignore
+    visibility: public
+# Drupal
+## Default Export
+  - port: 3030
+    onOpen: ignore
+    visibility: public
+## Default Import
+  - port: 3031
+    onOpen: ignore
+    visibility: public
+## Syndication Site 1
+  - port: 3032
+    onOpen: ignore
+    visibility: public
+## Syndication Site 2
+  - port: 3033
+    onOpen: ignore
+    visibility: public
+## Syndication Site 3
+  - port: 3034
+    onOpen: ignore
+    visibility: public
+## Fresh Export
+  - port: 3035
+    onOpen: ignore
+    visibility: public
+## Fresh Import
+  - port: 3036
+    onOpen: ignore
+    visibility: public
+
 github:
   prebuilds:
     master: true
     branches: false
-    pullRequests: false
+    pullRequests: true
     addCheck: true
-    addComment: false
+    addComment: true
     addBadge: true
     addLabel: true
 
 image:
   file: .gitpod.Dockerfile
 
-tasks:
-  - before: '[ ! -e "./.env" ] && cp .env.template .env'
-    name: Init .env file
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
+    - ms-vscode.vscode-typescript-tslint-plugin
+    - wayou.vscode-todo-highlight
+    - mongodb.mongodb-vscode
+    - neilbrayfield.php-docblocker
+    - felixfbecker.php-debug
+    - felixfbecker.php-intellisense
+    - bmewburn.vscode-intelephense-client
+    - https://github.com/breeze2/vscode-phpstan/releases/download/v1.1.5/phpstan-1.1.5.vsix
+    - mhutchie.git-graph
+    - cweijan.vscode-mysql-client2
+    - tabnine.tabnine-vscode
+    - mblode.twig-language-2
 
-  - init: docker-compose up -d
-    name: Init Sync Core modules
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+#
+# Prepare environment
+#
+
+# Provide submodules and required environment variables
+  - init: >
+      cp .env.template .env
+    command: >
+      sudo service cron start &&
+      gp sync-done variables &&
+      exit
+    name: Init .env file
