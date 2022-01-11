@@ -21,16 +21,3 @@ tasks:
   - command: >
       aws configure set region eu-central-1
     name: Init AWS config
-  - init: >
-      git submodule update --init --remote &&
-      cd services/forward-proxy &&
-      git checkout master &&
-      cd /workspace/stack/drupal/docroot &&
-      git submodule update --init --remote &&
-      cd config/content-sync &&
-      git checkout master &&
-      cd /workspace/stack/drupal/docroot/docroot/sites &&
-      git checkout master
-    command: >
-      gp sync-done submodules-prepare
-    name: Prepare all submodules
