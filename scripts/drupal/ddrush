@@ -1,0 +1,4 @@
+#!/bin/bash
+
+COMMAND="drush $@"
+docker-compose exec --user www-data drupal bash -ci "$COMMAND"

@@ -1,0 +1,2 @@
+
+*/3 * * * * /usr/bin/bash /workspace/stack/scripts/sync-core-cron.sh
