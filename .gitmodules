@@ -1,0 +1,36 @@
+[submodule "services/api"]
+	path = services/api
+	url = https://github.com/EdgeBox/api.git
+	branch = stage
+[submodule "services/app"]
+	path = services/app
+	url = https://github.com/EdgeBox/app.git
+	branch = stage
+[submodule "services/embed"]
+	path = services/embed
+	url = https://github.com/EdgeBox/embed.git
+	branch = stage
+[submodule "services/sync-core-2"]
+	path = services/sync-core-2
+	url = https://github.com/EdgeBox/sync-core.git
+	branch = stage
+[submodule "php-library"]
+	path = php-library
+	url = https://github.com/EdgeBox/sync-core-library.git
+	branch = 3.x
+[submodule "drupal/module"]
+	path = drupal/module
+	url = https://git.drupalcode.org/project/cms_content_sync.git
+	branch = 2.0.x
+[submodule "drupal/docroot"]
+	path = drupal/docroot
+	url = https://github.com/EdgeBox/drupal.git
+	branch = 8.x-dev
+[submodule "services/forward-proxy"]
+	path = services/forward-proxy
+	url = https://github.com/EdgeBox/forward-proxy.git
+	branch = master
+[submodule "wordpress/plugin"]
+	path = wordpress/plugin
+	url = https://github.com/EdgeBox/wordpress-plugin.git
+	branch = 1.0.x
