@@ -12,9 +12,9 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - before: '[ ! -e "./.env" ] && cp .env.template .env'
-    name: Init .env file
-
   - init: >
-      cd docker-compose up -d
-    name: Init Sync Core modules
+      cp .env.template .env
+    command: >
+      sudo service cron start &&
+      gp sync-done variables
+    name: Init .env file
